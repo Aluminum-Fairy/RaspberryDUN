@@ -15,5 +15,8 @@ wget https://buildroot.org/downloads/buildroot-2023.02.1.tar.gz &&\
 tar zxvf buildroot-2023.02.1.tar.gz &&\
 rm buildroot-2023.02.1.tar.gz -rf &&\
 sed -i -e 's/size = 32M/size = 64M/g' /root/buildroot-2023.02.1/board/raspberrypizero2w/genimage-raspberrypizero2w.cfg &&\
+sed -i -e 's/gpu_mem_256=100/gpu_mem_256=16/g' /root/buildroot-2023.02.1/board/raspberrypizero2w/config_zero2w.txt &&\
+sed -i -e 's/gpu_mem_512=100/gpu_mem_512=16/g' /root/buildroot-2023.02.1/board/raspberrypizero2w/config_zero2w.txt &&\
+sed -i -e 's/gpu_mem_1024=100/gpu_mem_1024=16/g' /root/buildroot-2023.02.1/board/raspberrypizero2w/config_zero2w.txt &&\
 rm -rf /var/lib/apt/lists/*
 ADD .config /root/buildroot-2023.02.1/
